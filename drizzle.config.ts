@@ -5,6 +5,7 @@ export default defineConfig({
   out: "./drizzle",
   dialect: "sqlite",
   dbCredentials: {
-    url: "./trackin.db",
+    url: process.env.DATABASE_URL || "file:trackin.db",
+    token: process.env.DATABASE_AUTH_TOKEN,
   },
 });
